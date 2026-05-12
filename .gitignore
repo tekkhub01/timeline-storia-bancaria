@@ -1,0 +1,21 @@
+# Ignora file di sistema
+.DS_Store
+Thumbs.db
+
+# Ignora file di log
+*.log
+
+# Ignora file temporanei
+*.tmp
+*.temp
+
+# Ignora cartelle di build (se si usa un bundler)
+/dist/
+/build/
+
+# Ignora node_modules (se si usa React/Vite)
+node_modules/
+
+# Ignora file di ambiente
+.env
+.env.local
