@@ -21,12 +21,19 @@ La timeline è divisa in 5 atti:
 - Immagini: Wikipedia Commons + illustrazioni AI-generated
 - Deploy: GitHub Pages o brix-ia.com
 
+## Prototipo attuale
+
+- **HTML5 + CSS**: timeline verticale con eventi alternati, linee verticali e marker
+- **Palette**: oro (#c9a84c), bordeaux (#6b1a1a), avorio (#f5f0e8), nero (#1a1a1a)
+- **Interattività**: click su un evento per evidenziarlo (classe `.active`)
+- **Responsive**: media query per schermi ≤600px
+
 ## Next Steps
 1. Validare lista eventi con Peter
-2. Scegliere stack tecnologico
-3. Creare prototipo HTML con 5 eventi di test
-4. Generare immagini storiche per i momenti chiave
-5. Scrivere testi per tutti i 30 eventi
+2. Scegliere stack tecnologico (React/Vite o HTML puro)
+3. Aggiungere immagini storiche per ogni evento
+4. Implementare modal per dettagli estesi
+5. Aggiungere filtri per atto/tema
 6. Deploy su brix-ia.com o GitHub Pages
 
 ## Note
