@@ -1,0 +1,45 @@
+/* Timeline Storia Bancaria - Stile base */
+:root {
+    --oro: #c9a84c;
+    --bordeaux: #6b1a1a;
+    --avorio: #f5f0e8;
+    --nero: #1a1a1a;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: var(--avorio);
+    color: var(--nero);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: var(--bordeaux);
+    color: var(--avorio);
+    padding: 2rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+main {
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+footer {
+    background-color: var(--nero);
+    color: var(--avorio);
+    text-align: center;
+    padding: 1rem;
+}
