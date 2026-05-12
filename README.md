@@ -21,12 +21,23 @@ La timeline è divisa in 5 atti:
 - Immagini: Wikipedia Commons + illustrazioni AI-generated
 - Deploy: GitHub Pages o brix-ia.com
 
-## Prototipo attuale
+## Prototipi attuali
 
-- **HTML5 + CSS**: timeline verticale con eventi alternati, linee verticali e marker
+### Timeline Verticale (HTML5 + CSS)
+- Eventi alternati sinistra/destra, linee verticali e marker
 - **Palette**: oro (#c9a84c), bordeaux (#6b1a1a), avorio (#f5f0e8), nero (#1a1a1a)
 - **Interattività**: click su un evento per evidenziarlo (classe `.active`)
 - **Responsive**: media query per schermi ≤600px
+- **File**: `index.html`
+
+### Timeline Orizzontale (HTML5 + CSS + JS)
+- Scrollabile orizzontalmente con drag, rotellina mouse e touch
+- **Emoji** al posto delle foto per ogni evento
+- **Articoli** (`<article>`) per ogni evento storico
+- **Interattività**: click per selezionare e centrare l'evento
+- **Design**: card con bordo colorato per atto, emoji grande
+- **File**: `timeline-orizontal.html`
+
 - **Deploy**: [GitHub Pages](https://tekkhub01.github.io/timeline-storia-bancaria/)
 
 ## Next Steps
