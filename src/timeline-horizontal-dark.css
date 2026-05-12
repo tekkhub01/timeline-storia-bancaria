@@ -1,0 +1,255 @@
+/* Timeline Orizzontale - Stile Dark */
+:root {
+    --bg-dark: #1a1a1a;
+    --bg-card: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --accent-red: #e74c3c;
+    --accent-blue: #3498db;
+    --accent-yellow: #f1c40f;
+    --accent-green: #2ecc71;
+    --accent-purple: #9b59b6;
+    --line-color: #555;
+    --line-dashed: #777;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: var(--text-primary);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+header {
+    background: rgba(0,0,0,0.5);
+    padding: 2rem;
+    text-align: center;
+    border-bottom: 1px solid var(--line-color);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+header p {
+    color: var(--text-secondary);
+    margin-top: 0.5rem;
+}
+
+main {
+    padding: 2rem;
+    overflow-x: auto;
+    position: relative;
+}
+
+/* Timeline orizzontale */
+.timeline-horizontal {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    padding: 4rem 2rem;
+    gap: 3rem;
+    position: relative;
+    min-height: 400px;
+    align-items: center;
+}
+
+/* Linea temporale orizzontale tratteggiata */
+.timeline-horizontal::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: repeating-linear-gradient(
+        to right,
+        var(--line-dashed) 0,
+        var(--line-dashed) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+/* Evento (articolo) */
+.event {
+    flex: 0 0 auto;
+    width: 220px;
+    background-color: var(--bg-card);
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: 1px solid #444;
+}
+
+.event:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+    border-color: var(--accent-blue);
+}
+
+.event-header {
+    margin-bottom: 1rem;
+}
+
+/* Emoji (placeholder per immagini) */
+.emoji {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    filter: drop-shadow(0 0 10px rgba(255,255,255,0.3));
+}
+
+/* Data - blocco colore */
+.date {
+    display: inline-block;
+    background: var(--accent-red);
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Titolo */
+.event h3 {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-primary);
+}
+
+/* Descrizione breve */
+.description-short {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin: 0.8rem 0;
+    line-height: 1.4;
+}
+
+/* Descrizione espansa (nascosta di default) */
+.description-expanded {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s ease;
+    text-align: left;
+    font-size: 0.85rem;
+    color: #ccc;
+    line-height: 1.5;
+    margin-top: 0;
+}
+
+/* Stato espanso */
+.event.expanded {
+    width: 280px;
+    background-color: #3d3d3d;
+    border-color: var(--accent-blue);
+}
+
+.event.expanded .description-expanded {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #555;
+}
+
+/* Attributi per distinguere gli atti - colori diversi per ogni atto */
+.event[data-atto="1"] .date { background: var(--accent-red); }
+.event[data-atto="2"] .date { background: var(--accent-blue); }
+.event[data-atto="3"] .date { background: var(--accent-yellow); color: #333; }
+.event[data-atto="4"] .date { background: var(--accent-green); }
+.event[data-atto="5"] .date { background: var(--accent-purple); }
+
+/* Connettore verticale dalla linea all'evento */
+.event::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 2px;
+    height: 50px;
+    background-color: var(--line-dashed);
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+/* Footer */
+footer {
+    background: rgba(0,0,0,0.7);
+    color: var(--text-secondary);
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid var(--line-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-horizontal {
+        flex-direction: row;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        padding: 3rem 1rem;
+        gap: 1.5rem;
+    }
+    
+    .event {
+        width: 180px;
+        scroll-snap-align: center;
+        padding: 1rem;
+    }
+    
+    .emoji {
+        font-size: 2.5rem;
+    }
+    
+    .event.expanded {
+        width: 220px;
+    }
+}
+
+/* Barra di scorrimento personalizzata */
+.timeline-horizontal::-webkit-scrollbar {
+    height: 10px;
+}
+
+.timeline-horizontal::-webkit-scrollbar-track {
+    background: #222;
+    border-radius: 5px;
+}
+
+.timeline-horizontal::-webkit-scrollbar-thumb {
+    background: linear-gradient(90deg, var(--accent-red), var(--accent-blue));
+    border-radius: 5px;
+}
+
+/* Animazione per espansione */
+@keyframes expandPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+.event.expanded {
+    animation: expandPulse 0.3s ease;
+}
