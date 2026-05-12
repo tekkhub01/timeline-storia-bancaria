@@ -27,6 +27,7 @@ La timeline è divisa in 5 atti:
 - **Palette**: oro (#c9a84c), bordeaux (#6b1a1a), avorio (#f5f0e8), nero (#1a1a1a)
 - **Interattività**: click su un evento per evidenziarlo (classe `.active`)
 - **Responsive**: media query per schermi ≤600px
+- **Deploy**: [GitHub Pages](https://tekkhub01.github.io/timeline-storia-bancaria/)
 
 ## Next Steps
 1. Validare lista eventi con Peter
