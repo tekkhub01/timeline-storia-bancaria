@@ -37,6 +37,7 @@ La timeline è divisa in 5 atti:
 - **Interattività**: click per selezionare e centrare l'evento
 - **Design**: card con bordo colorato per atto, emoji grande
 - **File**: `timeline-orizontal.html`
+- **Online**: [`https://tekkhub01.github.io/timeline-storia-bancaria/timeline-orizontal.html`](https://tekkhub01.github.io/timeline-storia-bancaria/timeline-orizontal.html)
 
 - **Deploy**: [GitHub Pages](https://tekkhub01.github.io/timeline-storia-bancaria/)
 

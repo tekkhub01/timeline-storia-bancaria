@@ -3,16 +3,26 @@ document.addEventListener('DOMContentLoaded', function() {
     const timeline = document.getElementById('timeline');
     const events = timeline.querySelectorAll('.event');
     
-    // Click su un evento per selezionarlo
+    // Click su un evento per espanderlo/selezionarlo
     events.forEach(event => {
-        event.addEventListener('click', function() {
-            // Rimuovi selezione da tutti
-            events.forEach(e => e.classList.remove('active'));
-            // Seleziona questo
-            this.classList.add('active');
+        event.addEventListener('click', function(e) {
+            // Evita di chiudere l'espansione se si clicca su un link o pulsante interno
+            if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
             
-            // Scrolla l'evento al centro
-            this.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            const isExpanded = this.classList.contains('expanded');
+            
+            // Rimuovi espansione e selezione da tutti
+            events.forEach(e => {
+                e.classList.remove('expanded', 'active');
+            });
+            
+            // Se non era già espanso, espandi questo
+            if (!isExpanded) {
+                this.classList.add('expanded', 'active');
+                
+                // Scrolla l'evento al centro
+                this.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+            }
         });
     });
     
